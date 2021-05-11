@@ -4,6 +4,7 @@ Build Docker image
 docker build --tag=fte-compiler .
 ```
 
+
 Checkout FTE from SVN
 
 ```
@@ -11,19 +12,30 @@ svn checkout https://svn.code.sf.net/p/fteqw/code/trunk fteqw-code
 ```
 
 
+Run bash on container with fte-config user and repo mounted
 
-Fetch the SVN branches to the local Git repo
+```
+docker run -it --user fte-compiler --mount type=bind,source="$(pwd)/fteqw-code",target=/home/fte-compiler/fteqw-code --mount type=bind,source="$(pwd)/htdocs",target=/home/fte-compiler/htdocs fte-compiler /bin/bash
+```
 
-    git svn fetch
 
-Merge SVN changes into git repo
+Run FTE build setup script
 
-    git svn rebase
+```
+cd fteqw-code
+./build_setup.sh
+```
 
-Push changes to github
 
-    git push
+Build
 
-Compile with Docker
+```
+./build_wip.sh
+```
 
-    docker run -it --mount type=bind,source="$(pwd)"/trunk,target=/fteqw fte-compiler /bin/bash -c "./build_setup.sh && ./build_wip.sh"
+Output will be on host machine in htdocs/
+
+
+Todo:
+- Run build_wip non-interactively in build stage.
+- Fix windows not compiling.
