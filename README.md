@@ -15,7 +15,14 @@ svn checkout https://svn.code.sf.net/p/fteqw/code/trunk fteqw-code
 Run bash on container with fte-config user and repo mounted
 
 ```
-docker run -it --user fte-compiler --mount type=bind,source="$(pwd)/fteqw-code",target=/home/fte-compiler/fteqw-code --mount type=bind,source="$(pwd)/htdocs",target=/home/fte-compiler/htdocs fte-compiler /bin/bash
+docker run \
+  --interactive \
+  --tty \
+  --user fte-compiler \
+  --mount type=bind,source="$(pwd)/fteqw-code",target=/home/fte-compiler/fteqw-code \
+  --mount type=bind,source="$(pwd)/htdocs",target=/home/fte-compiler/htdocs \
+  fte-compiler \
+  /bin/bash
 ```
 
 
