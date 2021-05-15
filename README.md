@@ -5,10 +5,10 @@ docker build --tag=fte-compiler .
 ```
 
 
-Checkout FTE from SVN
+Clone FortressOne FTE fork and symlink to fte-compiler/fteqw-code/
 
 ```
-svn checkout https://svn.code.sf.net/p/fteqw/code/trunk fteqw-code
+git clone git@github.com:FortressOne/fteqw-code.git
 ```
 
 
