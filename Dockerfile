@@ -8,6 +8,7 @@ RUN apt-get update && apt-get install -y \
 	dpkg-dev \
 	g++-multilib \
 	gcc-multilib \
+	git \
 	libasound2-dev \
 	libbz2-dev \
 	libegl1-mesa-dev \
