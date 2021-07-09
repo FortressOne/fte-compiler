@@ -37,7 +37,7 @@ cd fteqw-code
 Build
 
 ```
-./build_wip.sh
+FTE_CONFIG=fortressone ./build_wip.sh
 ```
 
 Output will be on host machine in htdocs/
