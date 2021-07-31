@@ -11,6 +11,13 @@ Clone FortressOne FTE fork and symlink to fte-compiler/fteqw-code/
 git clone git@github.com:FortressOne/fteqw-code.git
 ```
 
+Pull latest commits:
+
+```
+git svn fetch
+git svn rebase
+```
+
 
 Run bash on container with fte-config user and repo mounted
 
