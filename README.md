@@ -26,6 +26,7 @@ docker run \
   --interactive \
   --tty \
   --user fte-compiler \
+  --env FTE_CONFIG=fortressone \
   --mount type=bind,source="$(pwd)/fteqw-code",target=/home/fte-compiler/fteqw-code \
   --mount type=bind,source="$(pwd)/htdocs",target=/home/fte-compiler/htdocs \
   fte-compiler \
@@ -44,7 +45,7 @@ cd fteqw-code
 Build
 
 ```
-FTE_CONFIG=fortressone ./build_wip.sh
+./build_wip.sh
 ```
 
 Output will be on host machine in htdocs/
